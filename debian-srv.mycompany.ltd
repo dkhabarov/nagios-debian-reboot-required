@@ -1,0 +1,15 @@
+define service {
+    service_description Reboot Required
+    host_name localhost
+    check_command check_debian_reboot_required
+    use generic-service
+    contacts root
+}
+	
+define service {
+    service_description Reboot Required
+    host_name debian-srv-2.mycompany.ltd
+    check_command check_debian_reboot_required_by_snmp!CommunityName
+    use generic-service
+    contacts root
+}
